@@ -13,7 +13,7 @@ def print_book(book: dict, position: int = None):
     """Function print a book conditionally on whether a 'position' is provided
 
     Parameters:
-        book: dictionary of a book
+        book: Dictionary of a book
         position: Integer of position
     """
     if position:
@@ -84,7 +84,7 @@ def create_book():
 
             user_confirm = input(t.CONFIRM_ADD_BOOK)  # Display book to add
 
-            if user_confirm == '1':
+            if user_confirm == '1':  # Add created book to database
                 insert_book(book)
                 return print(display_formatter(t.CONFIRM_MESSAGE, f'\'{book['title']}\' has successfully been added'))
             elif user_confirm == '2':

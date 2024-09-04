@@ -9,22 +9,27 @@ from data.db_query import return_accounts_by_username, delete_account_by_usernam
     return_accounts_by_id, return_accounts_by_type, return_account_by_username, insert_account, update_account
 
 
-def print_account(acc: dict, position: int = None):
-    """Function to print an account conditionally on whether a 'position' is provided"""
+def print_account(account: dict, position: int = None):
+    """Function to print an account conditionally on whether a 'position' is provided
+
+    Parameters:
+        account: Dictionary of account
+        position: Integer of reference position
+        """
     if position:
         print(display_formatter(t.ENUMERATED_ACCOUNT,
                                 position,
-                                acc['id'],
-                                acc['username'],
-                                acc['password'],
-                                acc['acc_type'],
-                                acc['address']))
+                                account['id'],
+                                account['username'],
+                                account['password'],
+                                account['acc_type'],
+                                account['address']))
     else:
         print(display_formatter(t.ACC_PROFILE,
-                                acc['username'],
-                                acc['password'],
-                                acc['acc_type'],
-                                acc['address']))
+                                account['username'],
+                                account['password'],
+                                account['acc_type'],
+                                account['address']))
 
 
 def account_mapping(data: list[tuple] | tuple) -> list[dict] | dict:
