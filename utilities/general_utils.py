@@ -16,7 +16,7 @@ def password_validator(password: str):
         password: a string
 
     Returns:
-        Boolean
+        Boolean to confirm if regex matches
     """
     # (?=.*[A-Z]) - ensures that at least one capital letter is present
     # (?=.*\d) - ensures at least one number is present
